@@ -8,7 +8,7 @@ import { useStateValue } from "../StateProvider";
 import { actionTypes } from "../reducer";
 
 function Search({ hideButtons = false }) {
-    const [{},dispath] = useStateValue();
+  const [{}, dispath] = useStateValue();
   const [input, setInput] = useState("");
   const history = useHistory();
 
@@ -16,11 +16,10 @@ function Search({ hideButtons = false }) {
     e.preventDefault();
 
     dispath({
-        type: actionTypes.SET_SEARCH_TERM,
-        term:input
-    })
+      type: actionTypes.SET_SEARCH_TERM,
+      term: input,
+    });
     history.push("/search");
-
   };
 
   return (
